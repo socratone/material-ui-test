@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 const StyledButton = withStyles((theme) => ({
   root: {
     background: theme.background,
-    color: 'white',
+    color: (props) => props.color === 'white' ? 'white' : 'black',
     '&:hover': {
       background: theme.background,
     },
@@ -27,8 +27,9 @@ const innerTheme = createMuiTheme({
 const NestingTheme = () => {
   return (
     <div>
+      <h1>NESTING THEME</h1>
       <ThemeProvider theme={outerTheme}>
-        <StyledButton>클릭</StyledButton>
+        <StyledButton color="default">클릭</StyledButton>
         <ThemeProvider theme={innerTheme}>
           <StyledButton>클릭</StyledButton>
         </ThemeProvider>

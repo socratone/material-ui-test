@@ -4,6 +4,7 @@ import NavItem from './components/NavItem';
 import Main from './components/Main';
 import Home from './components/Home';
 import NestingTheme from './components/NestingTheme';
+import AdaptProps from './components/AdaptProps';
 
 function App() {
   return (
@@ -12,11 +13,15 @@ function App() {
         <Nav>
           <NavItem path="/">Home</NavItem>
           <NavItem path="/nestingtheme">NestingTheme</NavItem>
+          <NavItem path="/adaptprops">AdaptProps</NavItem>
         </Nav>
         <Main>
           <Switch>
             <Route path="/nestingtheme">
               <NestingTheme />
+            </Route>
+            <Route path="/adaptprops">
+              <AdaptProps />
             </Route>
             <Route path="/">
               <Home />
